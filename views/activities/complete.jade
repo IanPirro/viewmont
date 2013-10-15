@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+	h1 #{item.name} - Complete
+	form(method="post", action="/activities/complete/#{item._id}",enctype="multipart/form-data")
+		hr
+		input(type="file", name="displayImage",required)
+		hr
+		div.form-group 
+			label How was it?
+			textarea(name="comment",rows="5",style="width:100%;",required)
+
+		input.btn.btn-success(type="submit", value="Finish!", class="btn btn-default")
+
+block scripts

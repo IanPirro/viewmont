@@ -1,0 +1,26 @@
+doctype 5
+html
+	head
+		title= title
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		link(rel='stylesheet', href='/css/bootstrap.css')
+		link(rel='stylesheet', href='/css/style.css')
+	body.login-page
+		div(class="container")
+			img(src="/images/logocircletan.png", class="biglogo")
+			div.login-form
+				form(id="form", method="post", action="/user/login", role="form", class="col-md-6 col-md-offset-3")
+					div.form-group
+						label(for="username") Username
+						input(type="text", id="username", name="username", class="form-control", required)
+					div.form-group
+						label(for="password") Password
+						input(type="password", id="password", name="password", class="form-control", required)
+					div
+						input(type="submit", value="Sign in", class="btn btn-default")
+
+		<!-- Scripts -->
+		script(src="//code.jquery.com/jquery-2.0.3.min.js")
+		script(src="/js/knockout.min.js")
+		script(src="/js/bootstrap.min.js")
+		<!-- Page specific Scripts -->

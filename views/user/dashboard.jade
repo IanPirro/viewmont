@@ -1,0 +1,54 @@
+extends ../layout
+
+block content
+		h1 Dashboard
+			small.sm  Check you progress here
+		div.page-header
+			h3 My Badges
+		div(class="trophy-case")
+			if (user.score > 0)
+				img.award(src="/images/campfirebadge.png", title="Campfire badge")
+			if (user.score > 4)
+				img.award(src="/images/fishbadge.png", title="Fish badge")
+			if (user.score > 9)
+				img.award(src="/images/mountainbadge.png", title="Mountain badge")
+			if (user.score > 14)
+				img.award(src="/images/museumbadge.png", title="Museum badge")
+			if (user.score > 19)
+				img.award(src="/images/beerbadge.png", title="Beer badge")
+			if (user.score === 0)
+				ul(class="activity-feed")
+					li.activity-feed-item
+						div.bold You have not completed any activities yet, go out and explore Vermont to earn badges!
+
+		div(class="page-header")
+			h3 My Activity Feed
+		ul(class="activity-feed")
+			if (activities.length > 0)
+				each item in activities
+					li.activity-feed-item
+						div.pic.pull-left.hidden-xs
+							img(src="/images/starbadge.png", class="img-circle")
+						div.name.pull-left
+							div.bold 
+								a(href="/activities/details/#{item._id}") #{item.name}
+						div.time.pull-left
+							div.mute Completed #{item.time}
+			else
+				li.activity-feed-item
+					div.bold You have not completed any activities yet
+
+		div(class="page-header")
+			h3 Leaderboard - My score: 
+				span.badge(style="vertical-align: middle;") #{user.score}
+		ul(class="activity-feed")
+			each leader, i in leaders
+				li.activity-feed-item
+					div.pic.pull-left.hidden-xs
+						img(src="#{ghashes[i]}?s=48", class="img-circle")
+					div.name.pull-left
+						div.bold #{leader.name}
+					div.time.pull-left
+						div.badge.bold #{leader.score}
+
+block scripts

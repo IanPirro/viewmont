@@ -1,0 +1,124 @@
+@import 'lesshat.less';
+@import 'utils.less';
+
+body {
+	background: #9db56c;
+}
+
+.container {
+	background: white;
+}
+
+@import 'login.less';
+@import 'activity.less';
+
+
+ul, li{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+// Overrides
+
+address {
+	margin-bottom: 5px;
+}
+
+.navbar {
+	.border-radius(0px);
+	background: #344923;
+	border-color:  #344923;
+
+}
+
+.navbar-toggle {
+	margin-top: 17px;
+}
+
+.navbar-default .navbar-toggle:hover {
+	background-color: transparent;
+}
+
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-brand 
+{
+		color: white;
+
+		&:hover {
+			color: #f66c05; 
+		}
+
+}
+
+.navbar-default .navbar-nav > li > a {
+	margin-top: 11px;
+}
+
+
+.navbar-default .navbar-nav > .dropdown > a .caret {
+	border-top-color: #fff;
+	border-bottom-color: #fff;
+	margin-left: 10px;
+}
+
+.navbar-default .navbar-nav > .dropdown > a .caret:hover {
+	border-top-color: #f66c05;
+	border-bottom-color: #f66c05;
+}
+
+
+.app-container {
+	max-width: 1170px;
+	margin: 0 auto;
+	background: white;
+	.border-radius(10px);
+	margin-top: 30px;
+	padding: 15px 15px;
+	margin-bottom: 60px;
+}
+
+.award {
+	display: inline-block;
+	.border-radius(500%);
+}
+
+.trophy-case {
+	.award {
+		margin-right: 30px;
+		margin-bottom: 15px;
+	}
+
+}
+
+.activity-feed-item {
+	border-bottom: 1px solid #ddd;
+	padding: 10px 0;
+	overflow: hidden;
+
+	.pic { width: 10%; }
+	.name { 
+		width: 70%; 
+		div { 
+				margin-top: 12px; 
+			} 
+		}
+
+	.time { 
+		width: 20%; 
+		div { 
+				margin-top: 14px; 
+			} 
+	}
+}
+
+.act { height: 250px;}
+
+
+.footer-img {
+	background: url(/images/transmountains.png) top center no-repeat;
+	width: 100%;
+	height: 450px;
+}
+
+

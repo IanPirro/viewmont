@@ -1,0 +1,49 @@
+doctype 5
+html
+  head
+    title= title
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel='stylesheet', href='/css/bootstrap.css')
+    link(rel='stylesheet', href='/css/style.css')
+  body
+    nav(class="navbar navbar-default", role="navigation")
+
+      div(class="navbar-header")
+        button(type="button", class="navbar-toggle" ,data-toggle="collapse", data-target=".navbar-ex1-collapse")
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a(class="navbar-brand", href="/user/dashboard") 
+          img(src="/images/logo_line_lightgrn.png", width="150")
+
+      div(class="collapse navbar-collapse navbar-ex1-collapse")
+        ul(class="nav navbar-nav")
+          li
+            a(href="/activities/food") Food
+          li
+            a(href="/activities/outdoors") Outdoor
+          li
+            a(href="/activities/attractions") Attractions
+
+
+        ul(class="nav navbar-nav navbar-right")
+          li
+            a(href="/user/dashboard") Dashboard
+          li
+            a(href="/logout") Logout
+          li
+            a(style="margin-top: 10px;") 
+              img(src="#{gLink}", class="img-circle", width="24", height="24", style="margin-right: 7px;")
+              span #{user_name}
+
+
+
+    div(class="app-container")
+      block content
+    div.footer-img
+
+    <!-- Scripts -->
+    script(src="//code.jquery.com/jquery-2.0.3.min.js")
+    script(src="/js/bootstrap.min.js")
+    <!-- Page specific Scripts -->
+    block scripts

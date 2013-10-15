@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+	div.page-header
+		h1 #{category}
+	each item in cats
+		div.clearfix
+			div.page-header(style="margin-bottom: 35px;")
+				h3.med-gray #{item.name}
+			each act in item.activities
+				div.act-item
+					div.act-item-wrap
+						a(href="/activities/details/#{act._id}")
+							h4 #{act.name}
+						address.bold #{act.address}
+						div 
+							a(href="tel:#{act.phone}") #{act.phone || '--'}
+						div 
+							a(href="mailto:#{act.email}") #{act.email || ''}
+						if (completed.filter(function(el){ return el._id.toString() === act._id.toString(); }).length === 0)
+							a.btn.btn-success.act-item-action(href="/activities/complete/#{act._id}") Complete
+						else
+							button.btn.btn-default.act-item-action(disabled="disabled") 
+								span(class="glyphicon glyphicon-ok") &nbsp;Completed
+				
+
+block scripts
